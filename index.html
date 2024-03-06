@@ -10,12 +10,18 @@
   </head>
 
   <body>
+    <a-assets>
+      <img id="John_Rabe" src="John_Rabe.png">
+    </a-assets>
+    
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
       <a-image
         src="#John_Rabe"
+        height="3"
+        width="2"
         look-at="[gps-camera]"
         scale="120 120 120"
         gps-entity-place="latitude: 32.115351; longitude: 118.915839;"
