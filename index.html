@@ -12,7 +12,7 @@
   <body>
     <a-assets>
       <img id="John_Rabe" src="John_Rabe.png">
-      <video id="Nanjing_Murder" autoplay loop="true" src="Nanjing_Murder.mp4" playsinline webkit-playsinline></video>
+      <video id="Nanjing_Murder" autoplay loop="true" src="Nanjing_Murder.mp4" preload="none" playsinline webkit-playsinline></video>
     </a-assets>
     
     <a-scene
@@ -22,6 +22,7 @@
     <a-video
       src="#Nanjing_Murder" width="16" height="9" position="0 0 20"
     ></a-video>
+    <a-entity onclick="document.querySelector('#Nanjing_Murder').play()">点击以播放</a-entity>
       <meta name="apple-mobile-web-app-capable" content="yes">
       <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
