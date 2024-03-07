@@ -31,18 +31,19 @@
       src="#Nanjing_Murder" width="16" height="9" position="0 0 20"
     ></a-video>
 
-        <a-entity id="video-entity" position="0 0 5"
-    material="shader: flat;src:#Nanjing_Murder"
-    visible="false"
-    geometry="primitive: plane"
-    scale="10 6 1"
-    event-set_play="_event:play;visible: true">
+    <a-entity id="video-entity" position="0 0 20"
+              material="shader: flat;src:#Nanjing_Murder"
+              visible="false"
+              gometry="primitive: plane"
+              scale="10 6 1"
+              event-set_play="_event:play; visible: true">
     </a-entity>
 
     <audio src="#Nanjing_Murder" id="audio"></audio>
 
-    <a-entity id="video-controls" layout="type: line; margin:0.5" position="0 0.5 5">
-    <a-text value="play" font="roboto" 
+    <a-entity id="video-controls" layout="type: line; margin:0.5" 
+              position="0 0.5 5">
+     <a-text value="play" font="roboto" 
              onclick="document.querySelector('#audio').play();
              document.querySelector('#video-entity').emit('play')"
              ></a-text>
