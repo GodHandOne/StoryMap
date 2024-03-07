@@ -14,17 +14,45 @@
       <img id="John_Rabe" src="John_Rabe.png">
       <video id="Nanjing_Murder" autoplay loop="true" src="Nanjing_Murder.mp4" preload="none" playsinline webkit-playsinline></video>
     </a-assets>
+
     
     <a-scene
       vr-mode-ui="enabled: false"
       arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     >
+      
     <a-video
       src="#Nanjing_Murder" width="16" height="9" position="0 0 20"
     ></a-video>
-    <a-entity onclick="document.querySelector('#Nanjing_Murder').play()">点击以播放</a-entity>
-      <meta name="apple-mobile-web-app-capable" content="yes">
-      <a-camera gps-camera rotation-reader> </a-camera>
+
+        <a-entity id="video-entity" position="0 0 5"
+    material="shader: flat;src:#Nanjing_Murder"
+    visible="false"
+    geometry="primitive: plane"
+    scale="10 6 1"
+    event-set_play="_event:play;visible: true">
+    </a-entity>
+
+    <audio src="#Nanjing_Murder" id="audio"></audio>
+
+    <a-entity id="video-controls" layout="type: line; margin:0.5" position="0 0.5 5">
+    <a-text value="play" font="roboto" 
+             onclick="document.querySelector('#audio').play();
+             document.querySelector('#video-entity').emit('play')"
+             ></a-text>
+    <a-text value="pause"
+            font="roboto"
+            onclick="document.querySelector('#audio').pause()"></a-text>
+
+    <a-text value="restart"
+            font="roboto"
+            onclick="document.querySelector('#audio').currentTime=0;
+                     document.querySelector('#video-entity').emit('play')"
+    ></a-text>        
+    </a-entity>
+      
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
   </body>
 </html>
