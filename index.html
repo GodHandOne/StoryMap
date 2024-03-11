@@ -13,6 +13,20 @@
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         >
+        <a-assets>
+            <video
+               src="Nanjing_Murder.mp4"
+                    preload="auto"
+                    id="vid"
+                    response-type="arraybuffer"
+                    loop
+                    crossorigin
+                    webkit-playsinline
+                    autoplay
+                    muted
+                    playsinline 
+            ></video>
+        </a-assets>
         
         <a-text
         value="This content will always face you."
@@ -20,6 +34,21 @@
         scale="120 120 120"
         gps-entity-place="latitude: 32.115340; longitude: 118.915787;"
         ></a-text>
+
+        <a-video
+            src="#vid"
+            position='0 0 20'
+            rotation="0 0 0"
+            look-at="[gps-camera]"
+            videohandler
+            smooth="true"
+            smoothCount="10"
+            smoothTolerance="0.01"
+            smoothThreshold="5"
+            autoplay="false"
+            scale="1 1 1"
+            gps-entity-place="latitude: 32.115340; longitude: 118.915787;"
+        ></a-video>
             
         <a-camera gps-camera rotation-reader></a-camera>
         </a-scene>
