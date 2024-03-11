@@ -10,8 +10,6 @@
 
     <body style="margin: 0; overflow: hidden;">
         <a-scene
-            embedded
-            loading-screen="enabled: false;"
             vr-mode-ui="enabled: false"
             arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         >
@@ -31,10 +29,10 @@
             </a-assets>
                 <a-video
                     src="#vid"
-                    position='0 0.1 0'
-                    rotation="-90 0 0"
+                    position='0 0 20'
+                    rotation="0 0 0"
                     look-at="[gps-camera]"
-                    videohandler
+                    videohandler="true"
                     smooth="true"
                     smoothCount="10"
                     smoothTolerance="0.01"
