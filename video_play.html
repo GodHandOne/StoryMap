@@ -44,12 +44,12 @@
           const cameraElement = document.querySelector('a-camera');
           
           // 模拟的经纬度位置
-          const simulateLat = cameraElement.getAttribute('gps-camera').simulateLat
-          const simulateLong = cameraElement.getAttribute('gps-camera').simulateLong
+          const simulateLat = 32.117118
+          const simulateLong = 118.911037
           
           // 视频的GPS位置
-          const videoLat = parseFloat(videoElement.getAttribute('gps-entity-place').latitude)
-          const videoLong = parseFloat(videoElement.getAttribute('gps-entity-place').longitude)
+          const videoLat = 32.117120
+          const videoLong = 118.911040
       
           // 检查距离并决定是否显示视频
           function checkDistanceAndDisplayVideo() {
@@ -75,30 +75,6 @@
                 video.play();
             }
         }, { once: true }); // 使用 once 确保事件只触发一次
-    </script>
-    
-
-    <script>
-        // 模拟位置检测并控制视频
-        document.addEventListener('DOMContentLoaded', () => {
-            // 获取视频元素
-            const video = document.querySelector('#video');
-
-            // 模拟到达指定位置后播放视频
-            function checkLocationAndPlayVideo() {
-                // 假设用户已到达指定位置，可以在这里添加真实的地理位置检测逻辑
-                const atLocation = true;
-
-                if (atLocation) {
-                    video.play();
-                } else {
-                    video.pause(); // 或者根据需要停止视频
-                }
-            }
-
-            // 模拟位置检测，实际开发中需要替换为真实的地理位置API调用
-            checkLocationAndPlayVideo();
-        });
     </script>
     
 </body>
