@@ -20,6 +20,7 @@
             gps-entity-place="latitude:32.117120;longitude:118.911040;"></a-video>
         <a-camera gps-camera="simulateLatitude:32.117118;simulateLongitude:118.911037"
             rotation-reader></a-camera>
+        <button id="startExperience" position="0 1 -1"  look-at="[gps-camera]">开始体验</button>
     </a-scene>
 
     <script>
@@ -69,8 +70,7 @@
         });
       </script>
 
-<button id="startExperience" position="0 1 -1"  look-at="[gps-camera]">开始体验</button>
-<script>
+    <script>
     document.getElementById('startExperience').addEventListener('click', function() {
         const video = document.querySelector('#video');
         video.play().catch(error => console.log('播放视频时发生错误:', error));
