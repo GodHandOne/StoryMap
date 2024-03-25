@@ -20,8 +20,11 @@
             gps-entity-place="latitude:32.117120;longitude:118.911040;"></a-video>
         <a-camera gps-camera="simulateLatitude:32.117118;simulateLongitude:118.911037"
             rotation-reader></a-camera>
-        <button id="startExperience" position="0 1 -1"  look-at="[gps-camera]">开始体验</button>
     </a-scene>
+
+    <div style="position: absolute; z-index: 999; top: 10px; left: 10px;">
+    <button id="startExperience">开始体验</button>
+    </div>
 
     <script>
         // Haversine公式计算两点之间的距离（以米为单位）
