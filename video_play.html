@@ -67,18 +67,14 @@
           document.querySelector('a-scene').addEventListener('loaded', checkDistanceAndDisplayVideo);
         });
       </script>
-      
-    <!--控制视频的播放，点击任意地方-->
-    <script>
-        document.body.addEventListener('click', function () {
-            const video = document.querySelector('#video');
-            if (video.paused) {
-                video.play();
-            }else{
-                video.pause();
-            }
-        }); // 使用 once 确保事件只触发一次
-    </script>
+
+<button id="startExperience">开始体验</button>
+<script>
+    document.getElementById('startExperience').addEventListener('click', function() {
+        const video = document.querySelector('#video');
+        video.play().catch(error => console.log('播放视频时发生错误:', error));
+    });
+</script>
     
 </body>
 </html>
