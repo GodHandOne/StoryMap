@@ -20,11 +20,13 @@
             gps-entity-place="latitude:32.117120;longitude:118.911040;"></a-video>
         <a-camera gps-camera="simulateLatitude:32.117118;simulateLongitude:118.911037"
             rotation-reader></a-camera>
+        <a-entity geometry="primitive: plane; width: 1; height: 0.5"
+          material="color: #CCC"
+          position="0 1 -3"
+          text="value: 开始体验; align: center"
+          class="clickable"
+          id="startExperience"></a-entity>
     </a-scene>
-
-    <div style="position: absolute; z-index: 999; top: 10px; left: 10px;">
-    <button id="startExperience">开始体验</button>
-    </div>
 
     <script>
         // Haversine公式计算两点之间的距离（以米为单位）
@@ -73,12 +75,11 @@
         });
       </script>
 
-    <script>
-    document.getElementById('startExperience').addEventListener('click', function() {
-        const video = document.querySelector('#video');
-        video.play().catch(error => console.log('播放视频时发生错误:', error));
+    document.querySelector('#startExperience').addEventListener('click', function() {
+    const video = document.querySelector('#video');
+    video.play().catch(error => console.log('播放视频时发生错误:', error));
     });
-</script>
+
     
 </body>
 </html>
